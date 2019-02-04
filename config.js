@@ -9,7 +9,7 @@ capabilities: {
 
     framework: 'jasmine',
 
-specs: ['Test Cases/checkpageelements.js'],
+specs: ['Test Cases/Top-barUI.js'],
 
 allScriptsTimeout: 30000,
 
