@@ -1,20 +1,103 @@
-
 //declares the EC variable for using in expected conditions
 var EC = protractor.ExpectedConditions;
-var elem;
 
-var util = {
-    
+'use strict';
 
- // waits for the search bar to be clickable
+var newpage = function() { 
 
- u : browser.wait(EC.elementToBeClickable(elem), 20000).then(function(){
+   //function to wait for an element and click it
 
-    // inputs the location "Bhubaneshwar , India"        
-     elem.sendKeys("Bhubaneshwar , India");
+   this.waitClick = function(elem) { 
 
-   }),
+      browser.wait(EC.elementToBeClickable(elem), 20000).then(function()  {
+ 
+         elem.click();
+ 
+       })
+   };
 
-} 
 
-module.exports = util;
+   //function to check if the element is visible and click it
+
+   this.visibleclick = function(elem)  {
+
+     elem.isDisplayed().then(function(isVisible) { 
+            
+         if(isVisible) { 
+            elem.click();
+         }
+             else{
+                 console.log('element not visible');
+             }
+       })
+   };
+
+
+   //function to check if the element is present and click it
+
+   this.presentclick = function(elem) {
+
+      if(expect(elem.isPresent()).toEqual(true)){
+
+         elem.click();
+      }
+      else{
+         console.log('element is not present');
+      }
+   };
+
+   
+   //function to wait for an element and send values to it
+
+   this.waitSend = function(elem,value) { 
+
+      browser.wait(EC.elementToBeClickable(elem), 20000).then(function()  {
+
+         elem.click();
+
+         elem.sendKeys(value);
+ 
+       })
+   };
+
+
+
+   this.gettext = function(elem) { 
+ 
+    elem.getText().then(function(text) { 
+
+      console.log(text);
+
+    })
+
+   };
+
+
+
+   this.match = function(elem,value) { 
+
+      if(expect(elem.getText()).toMatch(value))
+      {
+         console.log('matched')
+      }
+      else{
+         console.log('not matched')
+      }
+   };
+
+
+//having error
+   this.hasHindiCharacters = function(str)  {
+
+      return str.split(" ").then( function(char) { 
+
+        var charCode = char.charCodeAt(); 
+
+        return charCode >= 2309 && charCode <=2361;
+
+      }).length > 0;
+    };
+
+   }
+
+module.exports = new newpage();

@@ -6,7 +6,7 @@ var search = {
 
     findme : element(by.buttonText('Find me')),
     
-    templang : element.all(by.css('button[class = styles__button__1Rnmk]')).get(1),
+    templang : element(by.css('button[aria-label = "Localization Menu"]')),
 
     toggle  : element.all(by.css('button[class = styles__button__2mXSV]')).first(),
 

@@ -9,7 +9,7 @@ capabilities: {
 
     framework: 'jasmine',
 
-specs: ['Test Cases/Top-barUI.js'],
+specs: ['Test Cases/LangTempSwitch.js'],
 
 allScriptsTimeout: 30000,
 

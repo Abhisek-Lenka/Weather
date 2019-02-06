@@ -1,9 +1,8 @@
 //import locators
 var obj = require('../Page Objects/Top-barUILocators.js')
 
-//declares the EC variable for using in expected conditions
-var EC = protractor.ExpectedConditions;
-
+//import util
+var util = require('../Test cases/Util.js');
 
 //check the elements present in the homepage
 
@@ -28,24 +27,14 @@ it("checks the input location is searched correctly",function() {
 
 
     // waits for the search bar to be clickable
-
-    browser.wait(EC.elementToBeClickable(obj.homepage.search), 20000).then(function(){
-
-        // inputs the location "Bhubaneshwar , India"        
-         obj.homepage.search.sendKeys("Bhubaneshwar , India");
-   
-       })
+    // inputs the location "Bhubaneshwar , India"        
+       
+    util.waitSend(obj.homepage.search,'Bhubaneshwar India');
 
     // waits for the first matched search result to be clickable
 
-      browser.wait(EC.elementToBeClickable(obj.firstres), 20000).then(function()  {
+      util.waitClick( obj.firstres);
 
-        //clicks the first matched search result
-
-        obj.firstres.click();
-
-
-      })
    
      // stores the name of the searached location in 'locname' variable
      var locname = obj.loctname.getText();
@@ -75,36 +64,27 @@ it("checks the input location is searched correctly",function() {
 it("Validate the features in the uppper block in  homepage",function() { 
 
      //waits for the search bar to be clickable
-
-      browser.wait(EC.elementToBeClickable(obj.homepage.search), 20000).then(function(){
-
      // inputs the location "Bhubaneshwar, India"        
-      obj.homepage.search.sendKeys("Bhubaneshwar, India");
+     
+      util.waitSend(obj.homepage.search,'Bhubaneshwar India');
 
-    })
-
-     // clicks the find me button
-
-      obj.homepage.findme.click();
-      
 
      // clicks the temp/Lang button 
 
-      obj.homepage.templang.click();
-
+      util.visibleclick(obj.homepage.templang);
+ 
       
      //clicks to open the menu toggle button
 
       obj.homepage.toggle.click();
 
-
+    
      //closes the menu
 
       obj.homepage.toggle.click();
     
     
 })
-
 
 
 
