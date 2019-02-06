@@ -9,7 +9,7 @@ capabilities: {
 
     framework: 'jasmine',
 
-specs: ['Test Cases/LangTempSwitch.js'],
+specs: ['Test Cases/FooterSocialIcons.js'],
 
 allScriptsTimeout: 30000,
 

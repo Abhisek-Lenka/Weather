@@ -3,8 +3,6 @@ var search = {
   homepage  : {
       
     search : element(by.css('[aria-label= "Location Search"]')),
-
-    findme : element(by.buttonText('Find me')),
     
     templang : element(by.css('button[aria-label = "Localization Menu"]')),
 

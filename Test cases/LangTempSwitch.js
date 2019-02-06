@@ -16,13 +16,13 @@ beforeEach(function() {
 
    browser.ignoreSynchronization = true;
 
-   // open the url 'https://weather.com/en-IN/' before every test cases
+      // open the url 'https://weather.com/en-IN/' before every test cases
    
       browser.get("https://weather.com/en-IN/");
 
       //clicks the search bar
 
-    util.waitClick(obj.search);
+      util.waitClick(obj.search);
 
 })
 
@@ -101,5 +101,6 @@ it("Change the Language from default to India(Hindi)",function() {
 
   //having error while comparing the text with hindi text
 })
+
 
 })

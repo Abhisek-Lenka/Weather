@@ -60,7 +60,7 @@ var newpage = function() {
        })
    };
 
-
+//function to get the text from the element
 
    this.gettext = function(elem) { 
  
@@ -73,16 +73,24 @@ var newpage = function() {
    };
 
 
+//function to match the element's value with a given value
 
    this.match = function(elem,value) { 
 
       if(expect(elem.getText()).toMatch(value))
+
       {
+
          console.log('matched')
+
       }
-      else{
+
+      else {
+
          console.log('not matched')
+      
       }
+   
    };
 
 
