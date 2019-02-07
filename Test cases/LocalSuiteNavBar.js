@@ -1,10 +1,12 @@
+'use strict';
+
 //import locators
 
 var locator = require('../Page Objects/LocalSuiteNavBarLocators.js');
 
-//import Util file
+//import pre-defined functions
 
-var util = require('../Test cases/Util.js');
+var util = require('../Util.js');
 
 
 // check the elements present in the Local suite Nav Bar

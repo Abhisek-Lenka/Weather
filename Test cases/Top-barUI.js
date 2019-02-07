@@ -1,8 +1,12 @@
-//import locators
-var obj = require('../Page Objects/Top-barUILocators.js')
+'use strict';
 
-//import util
-var util = require('../Test cases/Util.js');
+//import locators
+
+var locator = require('../Page Objects/Top-barUILocators.js')
+
+//import pre-defined functions
+
+var util = require('../Util.js');
 
 //check the elements present in the homepage
 
@@ -29,15 +33,15 @@ it("checks the input location is searched correctly",function() {
     // waits for the search bar to be clickable
     // inputs the location "Bhubaneshwar , India"        
        
-    util.waitSend(obj.homepage.search,'Bhubaneshwar India');
+    util.waitSend(locator.homepage.search,'Bhubaneshwar India');
 
     // waits for the first matched search result to be clickable
 
-      util.waitClick( obj.firstres);
+      util.waitClick(locator.firstres);
 
    
      // stores the name of the searached location in 'locname' variable
-     var locname = obj.loctname.getText();
+     var locname = locator.loctname.getText();
 
 
         locname.then(function(text) { 
@@ -55,33 +59,34 @@ it("checks the input location is searched correctly",function() {
                console.log("Correct location");
 
            }
-
        })
-    
+
 
 })
+
+
 
 it("Validate the features in the uppper block in  homepage",function() { 
 
      //waits for the search bar to be clickable
      // inputs the location "Bhubaneshwar, India"        
      
-      util.waitSend(obj.homepage.search,'Bhubaneshwar India');
+      util.waitSend(locator.homepage.search,'Bhubaneshwar India');
 
 
      // clicks the temp/Lang button 
 
-      util.visibleclick(obj.homepage.templang);
+      util.visibleclick(locator.homepage.templang);
  
       
      //clicks to open the menu toggle button
 
-      obj.homepage.toggle.click();
+      locator.homepage.toggle.click();
 
     
      //closes the menu
 
-      obj.homepage.toggle.click();
+      locator.homepage.toggle.click();
     
     
 })

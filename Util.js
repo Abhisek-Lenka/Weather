@@ -3,7 +3,8 @@ var EC = protractor.ExpectedConditions;
 
 'use strict';
 
-var newpage = function() { 
+var predeffunctions = function() { 
+
 
    //function to wait for an element and click it
 
@@ -15,6 +16,7 @@ var newpage = function() {
  
        })
    };
+
 
 
    //function to check if the element is visible and click it
@@ -33,6 +35,7 @@ var newpage = function() {
    };
 
 
+
    //function to check if the element is present and click it
 
    this.presentclick = function(elem) {
@@ -47,6 +50,7 @@ var newpage = function() {
    };
 
    
+
    //function to wait for an element and send values to it
 
    this.waitSend = function(elem,value) { 
@@ -60,6 +64,7 @@ var newpage = function() {
        })
    };
 
+
 //function to get the text from the element
 
    this.gettext = function(elem) { 
@@ -71,6 +76,7 @@ var newpage = function() {
     })
 
    };
+
 
 
 //function to match the element's value with a given value
@@ -94,6 +100,29 @@ var newpage = function() {
    };
 
 
+
+   //function to wait for an element and getText from it and match it with the value
+
+   this.waitTextMatch = function(elem,value) { 
+
+      browser.wait(elem.isDisplayed(), 20000).then(function()  {
+ 
+         elem.getText().then(function(text) {
+
+            expect(text).toContain(value);
+            
+            console.log(`${text} matched with ${value}`);
+         });
+ 
+       })
+
+
+
+   };
+
+
+
+
 //having error
    this.hasHindiCharacters = function(str)  {
 
@@ -106,6 +135,8 @@ var newpage = function() {
       }).length > 0;
     };
 
+    
+
    }
 
-module.exports = new newpage();
+module.exports = new predeffunctions();

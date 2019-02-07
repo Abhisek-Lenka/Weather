@@ -1,10 +1,14 @@
+'use strict';
+
 //import locators
 
 var locator = require('../Page Objects/FooterSocialIconsLocators.js');
 
-//import Util file
+//import pre-defined functions
 
-var util = require('./Util.js');
+var util = require('../Util.js');
+
+
 
 describe("Validation of the footer social icons",function() { 
 
