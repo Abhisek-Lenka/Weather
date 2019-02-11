@@ -47,34 +47,46 @@ describe("Validation of the footer social icons",function() {
 
         browser.getAllWindowHandles().then(function(handles) {
 
+           
             //swaps to the other tab in the browser
 
-            browser.switchTo().window(handles[1]).then(function() {
+
+if(handles.length > 1)  { 
+
+           
+    browser.switchTo().window(handles[1]).then(function() {
 
                 //waits till the url is extracted
-
-                browser.wait(browser.getCurrentUrl()).then(function() { 
+                
+                browser.wait(browser.getCurrentUrl()).then(function()  { 
+             
                     
                //matches the url of the current page with the desired url
 
-                expect(browser.getCurrentUrl()).toContain('https://www.facebook.com/TheWeatherChannel');
+               expect(browser.getCurrentUrl()).toContain('https://www.facebook.com/TheWeatherChannel');
 
-                })
+               
+             })
 
 
-                //prints that Facebook page is opened
+               
+             //prints that Facebook page is opened
 
-                console.log('Facebook Page opened');
+               
+             console.log('Facebook Page opened');
+
+              
+             //close the current tab
+ 
+             browser.close();
+
+             //switch to previous tab
+
+             browser.switchTo().window(handles[0]);
 
             });
 
-            //close the current tab
-
-            browser.close();
-
-            //switch to previous tab
-
-            browser.switchTo().window(handles[0]);
+        }
 
 
         });
@@ -102,9 +114,11 @@ describe("Validation of the footer social icons",function() {
 
          browser.getAllWindowHandles().then(function(handles)  {
 
+            if(handles.length > 1)  {
+
 
             //swaps to the other tab in the browser
-
+   
              browser.switchTo().window(handles[1]).then(function()  {
 
 
@@ -134,6 +148,7 @@ describe("Validation of the footer social icons",function() {
 
             browser.switchTo().window(handles[0]);
 
+            }
 
          });
  
@@ -159,6 +174,8 @@ describe("Validation of the footer social icons",function() {
          //get access to every tabs opened in browser
 
          browser.getAllWindowHandles().then(function(handles)  {
+
+            if(handles.length > 1)  {
 
 
             //swaps to the other tab in the browser
@@ -194,6 +211,9 @@ describe("Validation of the footer social icons",function() {
              browser.switchTo().window(handles[0]);
 
 
+            }
+
+
          });
  
                  
@@ -219,6 +239,8 @@ describe("Validation of the footer social icons",function() {
          //get access to every tabs opened in browser
 
          browser.getAllWindowHandles().then(function(handles)  {
+
+            if(handles.length > 1)  {
 
 
             //swaps to the other tab in the browser
@@ -252,6 +274,8 @@ describe("Validation of the footer social icons",function() {
 
             browser.switchTo().window(handles[0]);
 
+            }
+
 
          });
  
@@ -278,6 +302,8 @@ describe("Validation of the footer social icons",function() {
 
          browser.getAllWindowHandles().then(function(handles) {
 
+            if(handles.length > 1)  {
+
             //swaps to the other tab in the browser
 
              browser.switchTo().window(handles[1]).then(function() {
@@ -299,10 +325,14 @@ describe("Validation of the footer social icons",function() {
 
                  console.log('Youtube Page opened');
 
+            
+
              });
 
+            }
+
+
          });
- 
                  
      })
 
