@@ -41,7 +41,7 @@ capabilities: {
     framework: 'jasmine',
 
 
-specs: ['Test Cases/FooterSocialIcons.js'],
+specs: ['Test Cases/LocalSuiteNavBar.js'],
 
 
 allScriptsTimeout: 30000,

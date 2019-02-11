@@ -19,6 +19,7 @@ var predeffunctions = function() {
 
 
 
+
    //function to check if the element is visible and click it
 
    this.visibleclick = function(elem)  {
@@ -31,8 +32,11 @@ var predeffunctions = function() {
              else{
                  console.log('element not visible');
              }
-       })
-   };
+       }) 
+       
+      }
+
+ 
 
 
 
@@ -133,7 +137,7 @@ var predeffunctions = function() {
         return charCode >= 2309 && charCode <=2361;
 
       }).length > 0;
-    };
+    }
 
     
 
