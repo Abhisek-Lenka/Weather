@@ -158,7 +158,7 @@ describe("Validate the elements present in Local suite Nav Bar",function() {
 
     it("clicks on More Forecasts button",function() { 
         
-        browser.sleep(15000);
+        browser.sleep(10000);
 
         //moves the mouse over the dropdown menu and menu shows up
         browser.actions().mouseMove(locator.moreforecasts).perform();
